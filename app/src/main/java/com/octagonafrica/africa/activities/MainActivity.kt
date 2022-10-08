@@ -17,20 +17,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //fragmentTitle --> Title for each fragment
         fragmentTitle = findViewById(R.id.fragmentTitle)
         fragmentTitle.text = "DASHBOARD"
         chipNavigationBar = findViewById(R.id.mainBottomNavigationView)
-        chipNavigationBar!!.setItemSelected(
-            R.id.ic_dashboard,
-            true
-        )
-        supportFragmentManager.beginTransaction()
-            .replace(
-                R.id.fragmentPager,
-                DashboardFragment()
-            ).commit()
+        chipNavigationBar!!.setItemSelected(R.id.ic_dashboard, true)
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentPager, DashboardFragment()).commit()
+
         bottomMenu()
     }
+
+    //Function to navigate through the nav bar
     private fun bottomMenu() {
         chipNavigationBar?.setOnItemSelectedListener(object :
             ChipNavigationBar.OnItemSelectedListener {

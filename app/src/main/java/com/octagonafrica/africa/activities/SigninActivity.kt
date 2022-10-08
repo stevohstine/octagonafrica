@@ -12,6 +12,7 @@ class SigninActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin)
 
+        //Go to OTPVerification page
         val buttonLogin:Button = findViewById(R.id.buttonLogin)
         buttonLogin.setOnClickListener {
             val intent = Intent(this, OTPVerificationActivity::class.java)
@@ -19,6 +20,7 @@ class SigninActivity : AppCompatActivity() {
             finish()
         }
 
+        //Go to Signup page
         val goToSignup:LinearLayout = findViewById(R.id.linearLayout6)
         goToSignup.setOnClickListener {
             val intent = Intent(this, SignupActivity::class.java)

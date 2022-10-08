@@ -23,10 +23,12 @@ class OTPVerificationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_otpverification)
 
+        //Initialize custom OTP Input textfields
         inputCode1 = findViewById(R.id.inputCode1)
         inputCode2 = findViewById(R.id.inputCode2)
         inputCode3 = findViewById(R.id.inputCode3)
         inputCode4 = findViewById(R.id.inputCode4)
+
         setUpPinInputs()
         showSoftKeyboard(inputCode1)
 
@@ -38,6 +40,7 @@ class OTPVerificationActivity : AppCompatActivity() {
         }
     }
 
+    //Function listener for the otp inputs for automated inserts
     private fun setUpPinInputs(){
         inputCode1.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -148,6 +151,7 @@ class OTPVerificationActivity : AppCompatActivity() {
             false
         }
     }
+    //Functiom to request keypad
     private fun showSoftKeyboard(view: View) {
         if (view.requestFocus()) {
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
